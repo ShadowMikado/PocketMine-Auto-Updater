@@ -1,0 +1,5 @@
+name: AutoUpdater
+version: 1.0.0
+author: ShadowMikado
+api: [5.0.0]
+main: ShadowMikado\PocketMineAutoUpdater\Main
