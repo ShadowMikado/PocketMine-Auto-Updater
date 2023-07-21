@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/ShadowMikado/PocketMine-Auto-Updater
+build-by-default: true
+branches:
+- main
+projects:
+  PocketMine-Auto-Updater:
+    path: ""
+...
