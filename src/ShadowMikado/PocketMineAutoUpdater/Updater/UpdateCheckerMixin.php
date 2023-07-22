@@ -21,9 +21,14 @@ class UpdateCheckerMixin
 	public function downloadUpdate(): void
 	{
 		if ($this->isUpdatable() == true) {
-			Main::getInstance()->getLogger()->warning("Downloading PocketMine update, don't stop the server !");
+			Main::getInstance()->getLogger()->critical("Downloading PocketMine update, don't stop the server !");
 			file_put_contents(Main::getInstance()->getDataFolder() . "update/PocketMine-MP.phar", fopen($this->updateUrl, "r"));
-			copy("PocketMine-MP.phar", Main::getInstance()->getDataFolder() . "old/PocketMine-MP.phar");
+			if (file_exists("PocketMine-MP.phar")) {
+				copy("PocketMine-MP.phar", Main::getInstance()->getDataFolder() . "old/PocketMine-MP.phar");
+				Main::getInstance()->getLogger()->warning("Old PocketMine-MP.phar copied in ". Main::getInstance()->getDataFolder(). "old");
+			} else {
+				Main::getInstance()->getLogger()->notice("You've probably deleted old PocketMine-MP.phar, can't make a backup^!");
+			}
 			Main::getInstance()->getLogger()->warning("Successfully downloaded update in " . Main::getInstance()->getDataFolder() . "update");
 		}
 	}
