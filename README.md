@@ -4,4 +4,3 @@
 
 🇫🇷 Un plugin PocketMine-MP qui met à jour automatiquement votre serveur (l'ancien pocketmine est sauvegardé dans `plugin_data/AutoUpdater/old` et la nouvelle version dans `plugin_data/AutoUpdater/update`)
 
-[![](https://poggit.pmmp.io/shield.state/PM-AutoUpdater)](https://poggit.pmmp.io/p/PM-AutoUpdater)
